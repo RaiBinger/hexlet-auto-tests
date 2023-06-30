@@ -1,4 +1,4 @@
-import { capitalize } from '../src/capitalize.js';
+import { capitalize, getDividers } from '../src/capitalize.js';
 import { strict as assert } from 'node:assert';
 
 // if (capitalize('hello') !== 'Hello') {
@@ -9,8 +9,13 @@ import { strict as assert } from 'node:assert';
 //   throw new Error('Функция работает не верно!');
 // }
 
-assert.equal(capitalize(''), '');
+assert.strictEqual(capitalize(''), '');
 
-assert.equal(capitalize('hello'), 'Hello');
+assert.strictEqual(capitalize('hello'), 'Hello');
+
+const actual = getDividers(9);
+const expected = [1, 3, 9];
+
+assert.deepStrictEqual(actual, expected);
 
 console.log('Все тесты пройдены!');
